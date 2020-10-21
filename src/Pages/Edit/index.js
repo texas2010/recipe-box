@@ -1,15 +1,29 @@
 import React, { Component } from 'react'
+import Form from '../../components/Form'
+import './style.css'
 
-export default class index extends Component {
+export default class Edit extends Component {
     render() {
         const {
-            match
+            match,
+            recipes
         } = this.props
-        return (
-            <div>
-                <h1>Edit Recipe</h1>
-                <p>id: {match.params.id}</p>
-            </div>
-        )
+        const recipe = recipes.find(item => item.id === match.params.id)
+        if (recipe) {
+            return (
+                <div className="Edit">
+                    <h2>Edit Recipe</h2>
+                    <Form 
+                        type="edit"
+                        {...recipe}
+                        {...this.props}
+                        />
+                </div>
+            )
+        } else {
+            return (
+                <div>Loading...</div>
+            )
+        }
     }
 }

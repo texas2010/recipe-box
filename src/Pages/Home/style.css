@@ -1,7 +1,17 @@
-.Home .link {
-  color: white;
+.Home .create-button {
   padding: 10px 20px;
-  background-color: #888;
   text-decoration: none;
   border-radius: 3px;
+  color: #fff;
+  background-color: #007EA7;
+  display: block;
+  text-align: center;
+}
+
+.Home li a {
+  color: #CCDBDC;
+}
+
+.Home li h2 {
+  /* margin: ; */
 }

@@ -1,3 +1,47 @@
 .Form {
+  width: 300px;
+}
+
+.Form .label {
+  margin-bottom: 4px;
+}
+
+.Form .input,
+.Form .textarea {
+  margin-bottom: 14px;
+}
+
+.Form input,
+.Form textarea, 
+.Form button {
+  color: #fff;
+  background-color: #007EA7;
+  border-radius: 5px;
+  border: 2px solid #80CED7;
+}
+
+.Form textarea {
+  resize: none;
+}
+
+.Form input,
+.Form textarea {
+  width: calc(100% - 14px);
+  padding: 5px;
+}
+
+.Form button {
+  padding: 8px 18px;
+  cursor: pointer;
+}
+
+.Form .button-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Form .error-message {
+  color: red;
   text-align: center;
 }

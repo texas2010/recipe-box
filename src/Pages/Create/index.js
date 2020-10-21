@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-
+import './style.css'
 import Form from '../../components/Form'
 
-export default class index extends Component {
+export default class Create extends Component {
     render() {
         return (
             <div className="Create">
-                <h1>Create New Recipe</h1>
-                <Form />
+                <h2>Create New Recipe</h2>
+                <Form type="create" {...this.props} />
             </div>
         )
     }
