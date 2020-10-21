@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {
-    BrowserRouter,
+    HashRouter,
     Switch,
     Route,
     Redirect
@@ -72,7 +72,7 @@ export default class App extends Component {
         const { recipes } = this.state
         return (
             <div className="App">
-                <BrowserRouter>
+                <HashRouter>
                     <Header />
                     <Switch>
                         <Route
@@ -116,7 +116,7 @@ export default class App extends Component {
                             <Redirect to="/" />
                         </Route>
                     </Switch>
-                </BrowserRouter>
+                </HashRouter>
             </div>
         )
     }
