@@ -40,3 +40,8 @@
 .Recipe .main ol {
   margin: 10px;
 }
+
+.Recipe .main ul li,
+.Recipe .main ol li {
+  margin: 0 0 4px 0;
+}

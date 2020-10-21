@@ -74,44 +74,57 @@ export default class Form extends Component {
             <div className="Form">
                 <form>
                     {errorMessage && <p className="error-message">Please fill form.</p>}
-                    <div className="label">
-                        <label htmlFor="title">Recipe Title</label>
-                    </div>
-                    <div className="input">
-                        <input
-                            type="text"
-                            name="title"
-                            id="title"
-                            value={title}
-                            onChange={this.handleInputChange}
-                        />
-                    </div>
-                    <div className="label">
-                        <label htmlFor="ingredients">Ingredients</label>
-                    </div>
-                    <div className="textarea">
-                        <textarea
-                            name="ingredients"
-                            id="ingredients"
-                            cols="30"
-                            rows="10"
-                            value={ingredients}
-                            onChange={this.handleInputChange}
-                        ></textarea>
-                    </div>
-                    <div className="label">
-                        <label htmlFor="directions">Directions</label>
-                    </div>
-                    <div className="textarea">
-                        <textarea
-                            name="directions"
-                            id="directions"
-                            cols="30"
-                            rows="10"
-                            value={directions}
-                            onChange={this.handleInputChange}
-                        ></textarea>
-                    </div>
+                    <label className="border-group" htmlFor="title">
+                        <div className="label">
+                            <span>Recipe Title</span>
+                        </div>
+                        <div className="input">
+                            <input
+                                type="text"
+                                name="title"
+                                id="title"
+                                placeholder="Recipe Name"
+                                value={title}
+                                onChange={this.handleInputChange}
+                            />
+                        </div>
+                    </label>
+                    <label className="border-group" htmlFor="ingredients">
+                        <div className="label">
+                            <span>Ingredients:</span>
+                        </div>
+                        <div className="textarea">
+                            <p>Separate each ingredient with a "\": </p>
+                            <textarea
+                                name="ingredients"
+                                id="ingredients"
+                                cols="30"
+                                rows="10"
+                                placeholder="Milk \ 2 Eggs \ 1/3 Cup Sugar"
+                                value={ingredients}
+                                onChange={this.handleInputChange}
+                            ></textarea>
+                        </div>
+                    </label>
+                    <label className="border-group" htmlFor="directions">
+                        <div className="label">
+                            <span>Directions:</span>
+                        </div>
+                        <div className="textarea">
+                            <p>Separate each step with a "\":</p>
+                            <textarea
+                                name="directions"
+                                id="directions"
+                                cols="30"
+                                rows="10"
+                                value={directions}
+                                onChange={this.handleInputChange}
+                                placeholder="Preheat oven to 350°F \ 
+Combine ingredients in pie crust \
+Bake until crust is golden brown."
+                            ></textarea>
+                        </div>
+                    </label>
                     <div className="button-group">
                         <button
                             onClick={this.handleSubmit}>{formType}</button>
