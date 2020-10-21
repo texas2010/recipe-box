@@ -1,0 +1,28 @@
+.Recipe {
+  width: 90%;
+  padding: 10px;
+  min-height: 400px;
+  background-color: #007EA7;
+  border-radius: 8px;
+}
+
+.Recipe .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Recipe .header a {
+  color: #CCDBDC;
+}
+
+.Recipe .remove-item {
+  color: #CCDBDC;
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: #007EA7;
+  text-decoration: underline;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 0;
+}
