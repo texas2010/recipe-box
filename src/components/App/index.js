@@ -6,6 +6,7 @@ import {
     Redirect
 } from "react-router-dom";
 import './style.css'
+import { recipesState } from './recipesState'
 
 import Home from '../../Pages/Home'
 import Recipe from '../../Pages/Recipe'
@@ -19,7 +20,7 @@ export default class App extends Component {
         super(props)
 
         this.state = {
-            recipes: []
+            recipes: recipesState
         }
         this.handleCreateRecipe = this.handleCreateRecipe.bind(this)
         this.handleUpdateRecipe = this.handleUpdateRecipe.bind(this)
@@ -28,48 +29,31 @@ export default class App extends Component {
     componentDidMount() {
         const recipesJSON = localStorage.getItem('recipes')
         if (recipesJSON) {
-            this.setState({
-                recipes: JSON.parse(recipesJSON)
-            })
+            this.setState({ recipes: JSON.parse(recipesJSON) })
+        } else {
+            localStorage.setItem('recipes', JSON.stringify(this.state.recipes))
         }
     }
 
     handleCreateRecipe(recipe) {
-        this.setState(state => {
-            const newArray = [...state.recipes, recipe]
-            localStorage.setItem('recipes', JSON.stringify(newArray))
-            return {
-                recipes: newArray
-            }
-        })
+        this.setState(state => ({
+            recipes: [...state.recipes, recipe]
+        }), () => localStorage.setItem('recipes', JSON.stringify(this.state.recipes)))
     }
     handleUpdateRecipe(id, recipe) {
-        this.setState(state => {
-            const newArray = state.recipes.map(item => {
-                if (item.id === id) {
-                    return recipe
-                } else {
-                    return item
-                }
-            })
-            localStorage.setItem('recipes', JSON.stringify(newArray))
-            return {
-                recipes: newArray
-            }
-        })
+        this.setState(state => ({
+            recipes: state.recipes.map(item => item.id === id ? recipe : item)
+        }), () => localStorage.setItem('recipes', JSON.stringify(this.state.recipes)))
     }
     handleRemoveRecipe(id) {
-        this.setState(state =>{
-            const newArray = state.recipes.filter(item => item.id !== id)
-            localStorage.setItem('recipes', JSON.stringify(newArray))
-            return {
-                recipes: newArray
-            }
-        })
+        this.setState(state => ({
+            recipes: state.recipes.filter(item => item.id !== id)
+        }), () => localStorage.setItem('recipes', JSON.stringify(this.state.recipes)))
     }
 
     render() {
         const { recipes } = this.state
+
         return (
             <div className="App">
                 <HashRouter>
