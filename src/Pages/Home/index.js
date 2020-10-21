@@ -10,7 +10,7 @@ export default class Home extends Component {
         return (
             <div className="Home">
                 <Link to="create" className="create-button">Create New Recipe</Link>
-                <ul>
+                <ul className="recipes-list">
                     {recipes.map(item => (
                         <li key={item.id}>
                             <h2>

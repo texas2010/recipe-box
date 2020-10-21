@@ -31,13 +31,11 @@ export default class Recipe extends Component {
                             <button className="remove-item" onClick={() => this.handleRemove(recipe.id)}>Remove</button>
                         </div>
                     </div>
-                    <div>
+                    <div className="main">
                         <h3>Ingredients:</h3>
                         <ul>
                             {recipe.ingredients.map((item, index) => (<li key={index}>{item}</li>))}
                         </ul>
-                    </div>
-                    <div>
                         <h3>Directions:</h3>
                         <ol>
                             {recipe.directions.map((item, index) => (<li key={index}>{item}</li>))}

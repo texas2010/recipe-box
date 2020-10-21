@@ -11,6 +11,11 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.Recipe .header h2 {
+  flex-grow: 1;
+  text-align: center;
+}
 .Recipe .header a {
   color: #CCDBDC;
 }
@@ -25,4 +30,13 @@
   outline: none;
   font-size: 16px;
   padding: 0;
+}
+
+.Recipe .main h3 {
+  margin: 10px 0 0 10px;
+}
+
+.Recipe .main ul,
+.Recipe .main ol {
+  margin: 10px;
 }

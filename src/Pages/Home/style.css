@@ -2,16 +2,35 @@
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 3px;
-  color: #fff;
-  background-color: #007EA7;
+  color: #007EA7;
   display: block;
   text-align: center;
+  background-color: #80ced7ff;
+  font-weight: bold;
 }
 
-.Home li a {
-  color: #CCDBDC;
+
+
+.recipes-list {
+  background-color: #007EA7;
+  margin-top: 30px;
+  padding: 10px 20px;
+  border-radius: 6px;
 }
 
-.Home li h2 {
-  /* margin: ; */
+.recipes-list li {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.recipes-list h2 {
+  margin: 0;
+}
+
+.recipes-list  li a {
+  color: white;
+}
+
+.recipes-list li a:hover {
+  color: #80CED7;
 }
